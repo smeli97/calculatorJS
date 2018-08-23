@@ -1,0 +1,150 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+ "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+<title>My Calculator</title>
+	 #container{
+		background-color: #006064;
+		padding: 20px;
+		width: 150px;
+		height: 250px;
+		opacity: .8;
+		border: 2px solid black;
+	}
+	h1{
+		font: verdana;
+		font-size: 14pt;
+		text-transform: uppercase;
+	}
+	.num{
+		border-radius: 1px;
+	}
+	.operator{
+		border-radius: 100px;
+	}
+	#display{
+		width: 127px;
+	}
+	</style>
+	
+
+<script type="text/javascript">
+    
+	<!--
+	num1 = "";
+	num2 = " ";  
+	prevKey = "";
+	operation = "";
+	
+	function digits(num){
+	
+		// if entered operator 
+			//check if entered number or period therefore entered operator
+		if (!Number(prevKey) && prevKey != ".") { /// if cannot be conv into # return null and not null returns true;  		
+			num2 = num; //it's num2 bc an operator comes after num1 
+		}
+		else { // if it is a number 
+			num2+= num; 
+		}
+		prevKey = num;
+		display(num2);
+	
+	}
+	
+	function operator(oper){ 
+		if(num1 != ""){
+			equal();
+		}
+		operation = oper;
+		num1 = num2; //when click operation will move num2 into num1 
+		prevKey = operation; 
+	}
+	
+	function equal(){ // checking which operation it is by comparing strings 
+		if (operation == "+"){
+			num2 = Number(num1) + Number(num2);
+		}
+		else if (operation == "-"){
+			num2 = Number(num1) - Number(num2);
+		}
+		else if (operation == "/"){
+			num2 = Number(num1) / Number(num2);
+		}
+		else if (operation == "*"){
+			num2 = Number(num1) * Number(num2);
+		}
+		display(num2);
+	}
+
+	function display(num) {
+        var node = document.getElementById("display");  //local variable bc have var before variable name in function 
+		node.value=num; //specifies value of node i.e. attribute or text or none 
+     }
+	
+
+	
+-->
+</script>
+</head>
+
+<body> 
+<div id = "container">
+	
+	<h1>Simple calculator</h1>
+	
+
+	<!-- text box where numbers will be displayed -->
+	<form action="" method="get">
+	
+	<p>
+		<input type="text" id="display"/> 
+			
+	
+	</p>
+	</form>
+
+	<form action="" method="get">
+
+	<!--calculator buttons -->
+		<table> 
+			<tr>
+				<td> <input class = "num" type = "button" value = " 7 " onclick = "digits('7');" /> </td>
+				<td> <input class = "num" type = "button" value = " 8 " onclick = "digits('8');" /> </td>
+				<td> <input class = "num" type = "button" value = " 9 " onclick = "digits('9');" /> </td>
+				<td> <input class = "operator" type = "button" value = " / " onclick = "operator('/');" /> </td> 
+			</tr>
+			<tr>
+				<td> <input class = "num" type = "button" value = " 4 " onclick = "digits('4');" /> </td>
+				<td> <input class = "num" type = "button" value = " 5 " onclick = "digits('5');" /> </td>
+				<td> <input class = "num" type = "button" value = " 6 " onclick = "digits('6');" /> </td>
+				<td> <input class = "operator" type = "button" value = " * " onclick = "operator('*');" /> </td> 
+			</tr>
+			<tr>
+				<td> <input class = "num" type = "button" value = " 1 " onclick = "digits('1');" /> </td>
+				<td> <input class = "num" type = "button" value = " 2 " onclick = "digits('2');" /> </td>
+				<td> <input class = "num" type = "button" value = " 3 " onclick = "digits('3');" /> </td>
+				<td> <input class = "operator" type = "button" value = " - " onclick = "operator('-');" /> </td> 
+			</tr>
+			<tr>
+				<td> <input class = "num" type = "button" value = " . " onclick = "digits('.');" /> </td> 
+				<td> <input class = "num" type = "button" value = " 0 " onclick = "digits('0');" /> </td> 
+				<td> <input class = "operator" type = "button" value = " = " onclick = "equal('=');" /> </td> 
+				<td> <input class = "operator" type = "button" value = " + " onclick = "operator('+');" /> </td>
+			</tr>
+		
+		</table>
+
+	</form>
+	
+	</div>
+	
+	<p>
+	  <a href="http://validator.w3.org/check?uri=referer"><img
+		 src="http://www.w3.org/Icons/valid-xhtml11"
+		 alt="Valid XHTML 1.1" height="31" width="88" /></a>
+	</p>
+</body>
+</html>
